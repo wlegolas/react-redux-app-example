@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducer from './reducers'
+import App from './App';
+import './index.css';
+import reducers from './reducers';
+import registerServiceWorker from './registerServiceWorker';
 
 const contactInitialState = {
   name: 'Create a new contact'
 };
 
-const addContactReducer = (state = contactInitialState, action) => {
+const contact = (state = contactInitialState, action) => {
   switch (action.type) {
     case 'ADD_CONTACT':
       return { ...state, name: action.name };
@@ -20,7 +20,7 @@ const addContactReducer = (state = contactInitialState, action) => {
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducers);
 
 console.log(store.getState())
 

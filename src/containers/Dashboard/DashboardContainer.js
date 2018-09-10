@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Dashboard from '../../components/Dashboard/Dashboard';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ dashboard }) => {
   return {
-    countContacts: state.countContacts
+    contactCounter: dashboard.contactCounter
   };
 };
 
